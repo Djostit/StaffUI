@@ -1,0 +1,77 @@
+﻿<Page x:Class="StaffUI.Views.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StaffUI.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      DataContext="{Binding MainPageViewModel, 
+                    Source={StaticResource ViewModelLocator}}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage"
+      Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid VerticalAlignment="Center"
+              Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Главное окно"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="32"
+                       Margin="0 0 0 20"/>
+            <Button Grid.Row="1"
+                    Command="{Binding AddStaffCommand}"
+                    Margin="0 0 0 20"
+                    Content="Добавить сотрудника"/>
+            <Button Grid.Row="2"
+                    Command="{Binding RefreshCommand,IsAsync=True}"
+                    Margin="0 0 0 20"
+                    Content="Обновить данные"/>
+            <TextBlock Grid.Row="3"
+                       Text="Для получения большей информации, нажмите на сотрудника."
+                       Margin="0 0 0 20"
+                       TextWrapping="Wrap"/>
+            <ListView Grid.Row="4"
+                      ItemsSource="{Binding ItemsStaffs}"
+                      SelectedItem="{Binding SelectedStaff}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding Id}"/>
+                            <StackPanel Grid.Row="1"
+                                        Orientation="Horizontal">
+                                <TextBlock Text="{Binding FirstName}"
+                                           Margin="0 0 5 0"/>
+                                <TextBlock Text="{Binding LastName}"
+                                           Margin="0 0 5 0"/>
+                                <TextBlock Text="{Binding MiddleName}"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>

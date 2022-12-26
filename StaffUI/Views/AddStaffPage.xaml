@@ -1,0 +1,59 @@
+﻿<Page x:Class="StaffUI.Views.AddStaffPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StaffUI.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      DataContext="{Binding AddStaffViewModel, 
+                    Source={StaticResource ViewModelLocator}}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddStaffPage"
+      Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1"
+              VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Добавление сотрудника"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="22"
+                       Margin="0 0 0 20"/>
+            <TextBox Grid.Row="1"
+                     Margin="0 0 0 20"
+                     Text="{Binding IdNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     materialDesign:HintAssist.Hint="Табельный номер"/>
+            <TextBox Grid.Row="2"
+                     Margin="0 0 0 20"
+                     Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     materialDesign:HintAssist.Hint="Фамилия"/>
+            <TextBox Grid.Row="3"
+                     Margin="0 0 0 20"
+                     Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     materialDesign:HintAssist.Hint="Имя"/>
+            <TextBox Grid.Row="4"
+                     Margin="0 0 0 20"
+                     Text="{Binding MiddleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     materialDesign:HintAssist.Hint="Отчество"/>
+            <Button Grid.Row="5"
+                    Command="{Binding AddStaffCommand, 
+                              IsAsync=True}"
+                    Content="Добавить сотрудника"/>
+        </Grid>
+    </Grid>
+</Page>

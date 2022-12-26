@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffUI", "StaffUI\StaffUI.csproj", "{F7B3CB6A-D1A9-43A0-AB36-66805ED140FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7B3CB6A-D1A9-43A0-AB36-66805ED140FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7B3CB6A-D1A9-43A0-AB36-66805ED140FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7B3CB6A-D1A9-43A0-AB36-66805ED140FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7B3CB6A-D1A9-43A0-AB36-66805ED140FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CFCC6F0-9062-45DF-AFD1-EBC7054C6B69}
+	EndGlobalSection
+EndGlobal
